@@ -4,7 +4,7 @@ from tkinter import messagebox
 def validar_cpf():
     cpf = entrada.get()
 
-     # Verificando se os números são identicos
+     # Verificando se foi digitado 11 números
     if len(cpf) != 11 or not cpf.isdigit():
          messagebox.showerror("ERRO", "Digite exatamente 11 números!")
          return
