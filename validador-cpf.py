@@ -4,10 +4,16 @@ from tkinter import messagebox
 def validar_cpf():
     cpf = entrada.get()
 
-
+     # Verificando se os números são identicos
     if len(cpf) != 11 or not cpf.isdigit():
          messagebox.showerror("ERRO", "Digite exatamente 11 números!")
          return
+
+    # Verificando se todos os dígitos são iguais (caso raro, mas inválido)
+    if cpf == cpf[0] * 11:
+        messagebox.showerror("ERRO", "Não é permitido números idênticos!")
+        return
+
     nove_primeiros = cpf[:9]
 
     # Calcular o primeiro digito verificador
